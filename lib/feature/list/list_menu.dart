@@ -40,7 +40,7 @@ class ListMenu extends StatelessWidget {
           _buildMenuButton(context, 'Horizontal List', () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const HorizontalList()), // Navega a Horizontal List
+              MaterialPageRoute(builder: (context) => const Horizontallist()), // Navega a Horizontal List
             );
           }),
           _buildMenuButton(context, 'List with Spaced Items', () {

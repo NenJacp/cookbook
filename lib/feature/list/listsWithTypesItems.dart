@@ -17,9 +17,11 @@ class ListsWithTypesItems extends StatelessWidget {
       ),
       body: ListView(
         children: [
-          ListTile(title: Text('Type A Item')),
-          ListTile(title: Text('Type B Item')),
-          ListTile(title: Text('Type C Item')),
+          ListTile(title: Text('Elemento de Tipo A')),
+          ListTile(title: Text('Elemento de Tipo B')),
+          ListTile(title: Text('Elemento de Tipo C')),
+          ListTile(title: Text('Elemento de Tipo D')),
+          ListTile(title: Text('Elemento de Tipo E')),
         ],
       ),
     );

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'imagesFromInternet.dart'; // Importa el archivo de imágenes de internet
-import 'ImagesWithAPlaceholder.dart'; // Importa el archivo de imágenes con un placeholder
+import 'imagesFromInternet.dart'; // Import correcto para ImagesFromInternet
+import 'ImagesWithAPlaceholder.dart'; // Import correcto para ImagesWithAPlaceholder
 
 class ImageMenu extends StatelessWidget {
   const ImageMenu({super.key});
@@ -12,9 +12,7 @@ class ImageMenu extends StatelessWidget {
         title: const Text('Menú de Imágenes'),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
-          onPressed: () {
-            Navigator.pop(context); // Regresa al menú principal
-          },
+          onPressed: () => Navigator.pop(context),
         ),
       ),
       body: GridView.count(
@@ -23,13 +21,13 @@ class ImageMenu extends StatelessWidget {
           _buildMenuButton(context, 'Imágenes de Internet', () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const ImagesFromInternet()),
+              MaterialPageRoute(builder: (context) => const ImagesFromInternet()), // Navegación correcta a ImagesFromInternet
             );
           }),
           _buildMenuButton(context, 'Imágenes con Placeholder', () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const FadeImages()), // Navega a FadeImages
+              MaterialPageRoute(builder: (context) => const FadeImages()), // Navegación correcta a ImagesWithAPlaceholder
             );
           }),
           // Agrega más botones para otras imágenes según sea necesario

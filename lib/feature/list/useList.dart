@@ -16,12 +16,21 @@ class UseList extends StatelessWidget {
         ),
       ),
       body: ListView(
-        children: [
-          ListTile(title: Text('Use Item 1')),
-          ListTile(title: Text('Use Item 2')),
-          ListTile(title: Text('Use Item 3')),
-        ],
-      ),
+          children: const <Widget>[
+            ListTile(
+              leading: Icon(Icons.map),
+              title: Text('Map'),
+            ),
+            ListTile(
+              leading: Icon(Icons.photo_album),
+              title: Text('Album'),
+            ),
+            ListTile(
+              leading: Icon(Icons.phone),
+              title: Text('Phone'),
+            ),
+          ],
+        ),
     );
   }
 }
