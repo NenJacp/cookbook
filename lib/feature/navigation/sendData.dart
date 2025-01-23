@@ -85,3 +85,23 @@ class DetailScreen extends StatelessWidget {
     );
   }
 }
+
+class SendData extends StatelessWidget {
+  const SendData({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Enviar Datos'),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () => Navigator.pop(context),
+        ),
+      ),
+      body: const Center(
+        child: Text('Pantalla de Envío de Datos'),
+      ),
+    );
+  }
+}

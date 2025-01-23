@@ -5,6 +5,8 @@ import 'feature/image/image_menu.dart'; // Menú para las imágenes
 import 'feature/list/list_menu.dart'; // Menú para las listas
 import 'feature/navigation/navigation_menu.dart'; // Menú para la navegación
 import 'feature/form/form_menu.dart'; // Menú para los formularios
+import 'feature/effect/effect_menu.dart'; // Menú para los efectos
+import 'feature/animation/animation_menu.dart'; // Menú para las animaciones
 
 void main() {
   runApp(const MyApp());
@@ -21,7 +23,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.deepPurple,
         cardTheme: CardTheme(color: Colors.blue.shade50),
       ),
-      home: const HomePage(),
+      home: const NavigationMenu(),
     );
   }
 }

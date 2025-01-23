@@ -3,6 +3,11 @@ import 'namedRoutes.dart'; // Importa el archivo de Named Routes
 import 'newScreenAndBack.dart'; // Importa el archivo de New Screen and Back
 import 'returnData.dart'; // Importa el archivo de Return Data
 import 'widgetAcrossScreen.dart'; // Importa el archivo de Widget Across Screen
+import 'basicNavegation.dart'; // Importa el archivo de Basic Navigation
+import 'dataNavigation.dart'; // Importa el archivo de Data Navigation
+import 'animatedNavegation.dart'; // Importa el archivo de Animated Navigation
+import 'resultNavigation.dart'; // Importa el archivo de Result Navigation
+import 'sendData.dart';
 
 class NavigationMenu extends StatelessWidget {
   const NavigationMenu({super.key});
@@ -15,38 +20,34 @@ class NavigationMenu extends StatelessWidget {
         backgroundColor: Colors.deepPurple, // Color de fondo de la AppBar
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
-          onPressed: () {
-            Navigator.pop(context); // Regresa al menú principal
-          },
+          onPressed: () => Navigator.pop(context),
         ),
       ),
-      body: GridView.count(
-        crossAxisCount: 2,
-        padding: const EdgeInsets.all(16.0), // Padding alrededor de la GridView
-        children: <Widget>[
-          _buildMenuButton(context, 'Named Routes', () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const NamedRoutesDemo()), // Navega a Named Routes
-            );
+      body: ListView(
+        children: [
+          _buildMenuButton(context, 'Navegación Básica', () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => const BasicNavigation()));
           }),
-          _buildMenuButton(context, 'New Screen and Back', () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const FirstRoute()), // Navega a New Screen and Back
-            );
+          _buildMenuButton(context, 'Navegación con Datos', () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => const DataNavigation()));
           }),
-          _buildMenuButton(context, 'Return Data', () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const HomeScreen()), // Navega a Return Data
-            );
+          _buildMenuButton(context, 'Navegación Animada', () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => const AnimatedNavigation()));
           }),
-          _buildMenuButton(context, 'Widget Across Screen', () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const HeroApp()), // Navega a Widget Across Screen
-            );
+          _buildMenuButton(context, 'Navegación con Resultados', () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => const ResultNavigation()));
+          }),
+          _buildMenuButton(context, 'Retorno de Datos', () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => const ReturnData()));
+          }),
+          _buildMenuButton(context, 'Enviar Datos', () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => const SendData()));
+          }),
+          _buildMenuButton(context, 'Nueva Pantalla y Regresar', () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => const NewScreenAndBack()));
+          }),
+          _buildMenuButton(context, 'Rutas Nombradas', () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => const NamedRoutesDemo()));
           }),
         ],
       ),

@@ -115,3 +115,23 @@ class SelectionScreen extends StatelessWidget {
     );
   }
 }
+
+class ReturnData extends StatelessWidget {
+  const ReturnData({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Retorno de Datos'),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () => Navigator.pop(context),
+        ),
+      ),
+      body: const Center(
+        child: Text('Pantalla de Retorno de Datos'),
+      ),
+    );
+  }
+}
