@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.deepPurple,
         cardTheme: CardTheme(color: Colors.blue.shade50),
       ),
-      home: const NavigationMenu(),
+      home: const HomePage(),
     );
   }
 }
@@ -75,6 +75,18 @@ class HomePage extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => const FormMenu()),
+            );
+          }),
+          _buildMenuButton(context, 'Efectos', Icons.auto_fix_high, Colors.amber, () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const EffectMenu()),
+            );
+          }),
+          _buildMenuButton(context, 'Animaciones', Icons.animation, Colors.indigo, () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const AnimationMenu()),
             );
           }),
         ],

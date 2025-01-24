@@ -63,46 +63,45 @@ class _ExampleStaggeredAnimationsState extends State<ExampleStaggeredAnimations>
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: _buildAppBar(),
+      appBar: AppBar(
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Colors.black),
+          onPressed: () => Navigator.pop(context),
+        ),
+        title: const Text(
+          'Flutter Menu',
+          style: TextStyle(
+            color: Colors.black,
+          ),
+        ),
+        backgroundColor: Colors.transparent,
+        elevation: 0.0,
+        actions: [
+          AnimatedBuilder(
+            animation: _drawerSlideController,
+            builder: (context, child) {
+              return IconButton(
+                onPressed: _toggleDrawer,
+                icon: _isDrawerOpen() || _isDrawerOpening()
+                    ? const Icon(
+                        Icons.clear,
+                        color: Colors.black,
+                      )
+                    : const Icon(
+                        Icons.menu,
+                        color: Colors.black,
+                      ),
+              );
+            },
+          ),
+        ],
+      ),
       body: Stack(
         children: [
           _buildContent(),
           _buildDrawer(),
         ],
       ),
-    );
-  }
-
-  PreferredSizeWidget _buildAppBar() {
-    return AppBar(
-      title: const Text(
-        'Flutter Menu',
-        style: TextStyle(
-          color: Colors.black,
-        ),
-      ),
-      backgroundColor: Colors.transparent,
-      elevation: 0.0,
-      automaticallyImplyLeading: false,
-      actions: [
-        AnimatedBuilder(
-          animation: _drawerSlideController,
-          builder: (context, child) {
-            return IconButton(
-              onPressed: _toggleDrawer,
-              icon: _isDrawerOpen() || _isDrawerOpening()
-                  ? const Icon(
-                      Icons.clear,
-                      color: Colors.black,
-                    )
-                  : const Icon(
-                      Icons.menu,
-                      color: Colors.black,
-                    ),
-            );
-          },
-        ),
-      ],
     );
   }
 
